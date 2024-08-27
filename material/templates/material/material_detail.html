@@ -1,0 +1,24 @@
+<!-- material_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Material Detail</title>
+</head>
+<body>
+    <h1>{{ material.name }}</h1>
+    <p><strong>Type:</strong> {{ material.type }}</p>
+    <p><strong>Description:</strong> {{ material.description }}</p>
+    <p><strong>Thickness:</strong> {{ material.thickness }}</p>
+    <p><strong>Width:</strong> {{ material.width }}</p>
+    <p><strong>Height:</strong> {{ material.height }}</p>
+    <p><strong>Color:</strong> {{ material.color }}</p>
+    <p><strong>Manufacturer:</strong> {{ material.manufacturer }}</p>
+    <p><strong>Manufacturer Code:</strong> {{ material.manufacturer_code }}</p>
+    <p><strong>Price:</strong> {{ material.price }}</p>
+    <p><strong>Created At:</strong> {{ material.created_at }}</p>
+
+    <a href="{% url 'material_update' material.pk %}">Edit</a>
+    <a href="{% url 'material_delete' material.pk %}">Delete</a>
+    <a href="{% url 'material_list' %}">Back to List</a>
+</body>
+</html>

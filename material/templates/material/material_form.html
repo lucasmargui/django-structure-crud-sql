@@ -1,0 +1,101 @@
+<!-- material_form.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+
+<form method="post" action="{% url 'material_create' %}">   
+    <section Class="h-100 bg-dark">
+        <div Class="container py-5 h-100">
+            <div Class="row d-flex justify-content-center align-items-center h-100">
+                <div Class="col">
+                    <div Class="card card-registration my-4">
+                        <div Class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block" style="background-image: url('https://fastly.picsum.photos/id/307/5000/3333.jpg?hmac=wQFGsFoqFNhjL7Vf3y12D-qiKGUAl-BuhTbFJthHH4I'); background-repeat: repeat; background-size: contain; border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;">
+                                <img src="https://fastly.picsum.photos/id/307/5000/3333.jpg?hmac=wQFGsFoqFNhjL7Vf3y12D-qiKGUAl-BuhTbFJthHH4I"
+                                        alt="Sample photo" class="img-fluid"
+                                        style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; width: 100%; height: auto;" />
+                            </div>
+                            <div Class="col-xl-6">
+                                <div Class="card-body p-md-5 text-black">
+                                    <h3 Class="mb-5 text-uppercase">Material Form</h3>
+
+                                    {% csrf_token %}
+                                    <!-- {{ form.as_p }} -->
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.name.label_tag }}
+                                            {{ form.name }}
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.type.label_tag }}
+                                            {{ form.type }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.description.label_tag }}
+                                            {{ form.description }}
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.thickness.label_tag }}
+                                            {{ form.thickness }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.width.label_tag }}
+                                            {{ form.width }}
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.height.label_tag }}
+                                            {{ form.height }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.color.label_tag }}
+                                            {{ form.color }}
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.manufacturer.label_tag }}
+                                            {{ form.manufacturer }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.manufacturer_code.label_tag }}
+                                            {{ form.manufacturer_code }}
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.price.label_tag }}
+                                            {{ form.price }}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            {{ form.created_at.label_tag }}
+                                            {{ form.created_at }}
+                                        </div>
+                                    </div>
+
+                                    <div Class="d-flex justify-content-end pt-3">
+                                        <input type="submit" value="Create" class="btn btn-success" ></input>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+
+{% endblock %}
