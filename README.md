@@ -183,25 +183,49 @@ Create other templates that extend the base template: In each of your individual
 <details>
 <summary>Click to show details about </summary>
 
+In django controllers are called views, responsible for processing HTTP requests, interacting with the model and rendering responses, usually in the form of HTML templates
+
 #### Creating a Controller:
+
+To create a controller, create a file called views.py inside the app
+
+![image](https://github.com/user-attachments/assets/60cbee00-ba90-4c22-8d98-8bf1ea17f9c5)
+
+![image](https://github.com/user-attachments/assets/1673cecd-28b4-4bff-9e6c-729c127698fc)
+
 
 ### Actions
 
-#### Index():
+#### material_list(request):
 
-#### Details(ByVal id As Integer?):
+This function handles requests to display a list of all Material objects. It retrieves all Material instances from the database using Material.objects.all(). The retrieved data is then passed to the template 'material/material_list.html' through the context dictionary, where it is available under the key 'materiais'.
 
-#### Create():
 
-#### Create(ByVal materialMovel As MaterialMovel):
+#### material_detail(request, pk):
 
-#### Edit(ByVal id As Integer?):
+This function displays the details of a single Material object identified by its primary key (pk). It fetches a specific Material object from the database using get_object_or_404, which raises a 404 error if the object is not found. The object is then passed to the template 'material/material_detail.html' with the key 'material'.
 
-#### Edit(ByVal materialMovel As MaterialMovel):
+#### material_create(request):
 
-#### Delete(ByVal id As Integer?):
+This function handles the creation of a new Material object.
 
-#### DeleteConfirmed(ByVal id As Integer):
+- If the request method is POST, it means the form has been submitted. The form is populated with POST data, and if the form is valid, it saves the new Material object and redirects to its detail page.
+- If the request method is GET (or any method other than POST), it creates an empty form. The form is then rendered using the template 'material/material_form.html'.
+
+#### material_update(request, pk):
+
+This function handles updating an existing Material object.
+
+
+- If the request method is POST, it populates the form with the submitted data and the existing Material instance. If the form is valid, it saves the updated object and redirects to its detail page.
+- For any other request method (typically GET), it initializes the form with the existing Material data and renders it using the template 'material/material_form.html'.
+
+#### material_delete(request, pk):
+
+This function handles the deletion of a Material object.
+
+- If the request method is POST, it deletes the Material object from the database and redirects to the material list page.
+- For non-POST requests (usually GET), it renders a confirmation page 'material/material_confirm_delete.html', where the user can confirm the deletion.
 
 </details>
 
@@ -210,12 +234,33 @@ Create other templates that extend the base template: In each of your individual
 <details>
 <summary>Click to show details about </summary>
 
+#### Configure the app URLs:
+
+In the urls.py file within the material folder, you define routes specific to that application. This involves importing views and creating URL patterns that map URLs to corresponding view functions or classes. For example:
+
+![image](https://github.com/user-attachments/assets/dda8dc3d-b56b-488d-b9e5-4f11512a9bf7)
+
+
+#### Include the app URLs in the main URLs:
+
+After defining the routes in the material app, you need to include these URLs in the main urls.py file of the project. This ensures that Django knows about the app's routes and can route them correctly. You do this by using the include() function to add the app's URLs to the main project URL pattern:
+
+![image](https://github.com/user-attachments/assets/cc6fde88-12b6-4593-b957-a7664e571b6e)
+
+
 </details>
 
 ## Views
 
 <details>
 <summary>Click to show details about </summary>
+  
+In Django, templates are used to generate dynamic HTML content by combining HTML code with Django Template Language (DTL)
+
+![image](https://github.com/user-attachments/assets/58fc70ae-cc7e-4a24-9519-86b432691278)
+
+![image](https://github.com/user-attachments/assets/f041f6c2-9a01-459c-9a16-4c3996b60212)
+
 
 
 </details>
