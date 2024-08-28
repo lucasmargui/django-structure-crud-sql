@@ -90,8 +90,6 @@ Locate and open the settings.py file, which is typically found in the main direc
 <details>
 <summary>Click to show details about </summary>
 
-
-
 In Django, models are the heart of your web application’s data structure. They define the structure of your database, encapsulating essential fields and behaviors of the data you want to store. Each model class typically maps to a single database table, where class attributes represent the columns of the table.
 
 #### Model Material
@@ -119,6 +117,30 @@ In short, it creates a skeleton of how the model form will be represented on the
 <details>
 <summary>Click to show details about </summary>
 
+Creating and applying migrations in Django involves two key commands:
+
+![image](https://github.com/user-attachments/assets/e07c7c27-3cee-40ca-98b1-6f77feac8df2)
+
+
+#### makemigrations: 
+
+```
+python manage.py makemigrations
+```
+
+This command generates migration files based on the changes you've made to your models. Migrations are a way to record changes to your database schema, such as creating tables, adding fields, or modifying existing ones. Running makemigrations tells Django to look at your models and create the necessary migration scripts to reflect any changes.
+
+#### migrate:
+
+```
+python manage.py migrate
+```
+
+This command applies the migration files to your database, executing the necessary SQL commands to update your database schema. Running migrate ensures that your database is synchronized with the current state of your models, applying all pending migrations in the correct order.
+
+![image](https://github.com/user-attachments/assets/f9592e14-cbea-4a4c-8242-9b23249ef506)
+
+
 
 </details>
 
@@ -126,10 +148,33 @@ In short, it creates a skeleton of how the model form will be represented on the
 
 <details>
 <summary>Click to show details about </summary>
- 
+
+
+#### Config Templates
+
+Make sure the configuration for the template directories is correct. Typically there should be something like this
+
+![image](https://github.com/user-attachments/assets/e50186d4-95a3-48e4-9277-0dc0b414964f)
+
 #### Layout (Master Page):
 
+Create a base template file: Typically, this file is called base.html and is located in your application's templates folder or project's templates directory.
+
+![image](https://github.com/user-attachments/assets/83b535ee-baa6-4396-9232-88093580df1d)
+
+###### Base.html
+
+![image](https://github.com/user-attachments/assets/13e08718-7b78-4711-a006-49cc80f0ec1b)
+
+
 #### Rendering Content
+
+Create other templates that extend the base template: In each of your individual templates, you use the {% extends %} tag to inherit the base.html structure and define the specific content with the {% block %} tag
+
+![image](https://github.com/user-attachments/assets/3335f32a-31f9-476b-a763-bfd64678a5ea)
+
+![image](https://github.com/user-attachments/assets/6eb8a96d-7956-4b2e-b87f-ad2439ab9438)
+
 
 </details>
 
