@@ -142,7 +142,8 @@ In short, it creates a skeleton of how the model form will be represented on the
 
 - Create Links
 
-  ![image](https://github.com/user-attachments/assets/43602d03-1bb1-489a-a78c-386cfc20dada)
+ ![image](https://github.com/user-attachments/assets/6e8eb6bd-aadd-4523-8226-e1a45c319fc5)
+
 
 
 
