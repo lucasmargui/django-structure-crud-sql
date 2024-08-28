@@ -130,7 +130,7 @@ In short, it creates a skeleton of how the model form will be represented on the
 
 - Change Views.py(Controller): Define the views that will process the HTTP directives and pass the data to the template.
 
-  ![image](https://github.com/user-attachments/assets/c4f5a55f-e335-45f4-a9ef-f15ea01a00c9)
+  ![image](https://github.com/user-attachments/assets/424e8dca-35b1-49f6-8cb7-0bbe848e6943)
 
 - Change Urls.py: Define the views that will process the HTTP directives and pass the data to the template.
 
