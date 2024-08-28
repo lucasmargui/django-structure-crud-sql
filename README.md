@@ -134,7 +134,7 @@ In short, it creates a skeleton of how the model form will be represented on the
 
 - Change Urls.py: Define the views that will process the HTTP directives and pass the data to the template.
 
-  ![image](https://github.com/user-attachments/assets/6116d9a7-fb4f-4b3a-9f71-a077a872c016)
+  ![image](https://github.com/user-attachments/assets/8ad5e702-8cb9-4afa-a1c2-b6e0190d18fa)
 
 - Create Templates: Create HTML templates to display and interact with data.
 
