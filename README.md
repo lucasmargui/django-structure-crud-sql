@@ -110,6 +110,42 @@ In short, it creates a skeleton of how the model form will be represented on the
 ![image](https://github.com/user-attachments/assets/3c15c47c-49ab-4203-9c66-fa16529e6ef2)
 
 
+#### Model Order: One to Many
+
+- Change Models.py : Define the Order model, which will have a ForeignKey field for the Material model.
+
+  ![image](https://github.com/user-attachments/assets/8f7b52ea-45a0-47b3-bca2-2bdf64a55a52)
+
+- python manage.py makemigrations
+
+  ![image](https://github.com/user-attachments/assets/177553f8-56a3-4c6c-9ba4-7d5ace98b327)
+
+- python manage.py migrate
+
+  ![image](https://github.com/user-attachments/assets/f2e0a076-10ad-49c6-8860-ba55cee4c070)
+
+- Change Forms.py: If you want to allow creating or editing orders through a form, you need to define a Django form.
+
+  ![image](https://github.com/user-attachments/assets/d7f3c615-0559-463f-816f-723d0536ed2e)
+
+- Change Views.py(Controller): Define the views that will process the HTTP directives and pass the data to the template.
+
+  ![image](https://github.com/user-attachments/assets/c4f5a55f-e335-45f4-a9ef-f15ea01a00c9)
+
+- Change Urls.py: Define the views that will process the HTTP directives and pass the data to the template.
+
+  ![image](https://github.com/user-attachments/assets/6116d9a7-fb4f-4b3a-9f71-a077a872c016)
+
+- Create Templates: Create HTML templates to display and interact with data.
+
+  ![image](https://github.com/user-attachments/assets/9ec8248c-78e1-466b-b184-6a859d808eee)
+
+- Create Links
+
+  ![image](https://github.com/user-attachments/assets/43602d03-1bb1-489a-a78c-386cfc20dada)
+
+
+
 </details>
 
 ## Migrations
