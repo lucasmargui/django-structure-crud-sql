@@ -1,5 +1,5 @@
 from django import forms
-from .models import Material
+from .models import  Order ,Material
 
 class MaterialForm(forms.ModelForm):
     class Meta:
@@ -17,4 +17,13 @@ class MaterialForm(forms.ModelForm):
             'manufacturer_code': forms.TextInput(attrs={'class': 'form-control form-control-lg'}),
             'price': forms.NumberInput(attrs={'class': 'form-control form-control-lg', 'step': '0.01'}),
             'created_at': forms.DateInput(attrs={'class': 'form-control form-control-lg', 'type': 'date'}),
+        }
+
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ['material', 'quantity']
+        widgets = {
+            'material': forms.Select(),
+            'quantity': forms.NumberInput(attrs={'min': 1}),
         }

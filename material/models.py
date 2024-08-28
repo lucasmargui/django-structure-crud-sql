@@ -15,3 +15,11 @@ class Material(models.Model):
 
     def __str__(self):
         return self.name
+
+class Order(models.Model):
+    material = models.ForeignKey(Material, on_delete=models.CASCADE, related_name='orders')
+    quantity = models.PositiveIntegerField()  # quantidade
+    order_date = models.DateTimeField(auto_now_add=True)  # data do pedido
+
+    def __str__(self):
+        return f"Order of {self.quantity} {self.material.name}"

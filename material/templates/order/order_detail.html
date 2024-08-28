@@ -1,0 +1,17 @@
+<!-- order_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>order Detail</title>
+</head>
+<body>
+    <h1>{{ order.name }}</h1>
+    <p><strong>Type:</strong> {{ order.type }}</p>
+    <p><strong>Description:</strong> {{ order.description }}</p>
+    <p><strong>Order At:</strong> {{ order.created_at }}</p>
+
+    <a href="{% url 'order_update' order.pk %}">Edit</a>
+    <a href="{% url 'order_delete' order.pk %}">Delete</a>
+    <a href="{% url 'order_list' %}">Back to List</a>
+</body>
+</html>
